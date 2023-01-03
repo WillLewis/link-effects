@@ -230,10 +230,6 @@ body {
   line-height: 1;
 }
 
-.text-block-2 {
-  text-transform: uppercase;
-}
-
 .internal-underline {
   position: absolute;
   left: 124px;
@@ -253,10 +249,6 @@ body {
   right: 0%;
   bottom: 0%;
   z-index: 0;
-}
-
-.three-dots {
-  font-family: "Work Sans", sans-serif;
 }
 
 .background-color {
