@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Link Effects</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link href="css/page.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body class="body">
+    <div class="page-wrapper">
+      <div class="custom-styles w-embed">
+        <style>
+          .link {
+            cursor: pointer;
+            font-size: 18px;
+            position: relative;
+            white-space: nowrap;
+            color: var(--color-text);
+          }
+          .link::before,
+          .link::after {
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background: currentColor;
+            top: 100%;
+            left: 0;
+            pointer-events: none;
+          }
+          .link::before {
+            content: "";
+            /* show by default */
+          }
+        </style>
+      </div>
+      <div class="main-container">
+            <div class="container---l align-center">
+              <div class="text-center">
+                <div class="section-title">
+                  <h6
+                    class="subheading text-primary-1"
+                  >
+                    WXL
+                  </h6>
+                  <div class="relative">
+                    <h1
+                      class="heading"
+                    >
+                      <span> CSS</span> Link Effects
+                    </h1>
+                  
+                  </div>
+                  <div
+                    class="section-subtitle text-large"
+                  >
+                    I'm a fan of pure CSS. I've seen pages of CSS link effects across the internet but the code is usually not optimized for readability, they often have arbitraty styles that make it difficult to isolate the link effect and the naming conventions aren't helpful. I've attempted to address that here with a dead simple code base:)
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <div class="section-button-holder">
+        <div id="column-block" class="button-card-wrapper">
+          <div class="button-number">01</div>
+          <a href="#" class="link underline-trail column-inline-block">
+            <div>line across</div>
+            <div class="custom-styles column-embed">
+              <style>
+                .underline-trail::before {
+                  transform-origin: 100% 50%;
+                  transform: scale3d(0, 1, 1);
+                  transition: transform 0.3s;
+                }
+                .underline-trail:hover::before {
+                  transform-origin: 0% 50%;
+                  transform: scale3d(1, 1, 1);
+                }
+              </style>
+            </div>
+          </a>
+        </div>
+        <div id="column-block" class="button-card-wrapper">
+          <div class="button-number">02</div>
+          <a href="#" class="link double-underline column-inline-block">
+            <div>passing trains</div>
+            <div class="custom-styles column-embed">
+              <style>
+                .double-underline::before {
+                  transform-origin: 100% 50%;
+                  transform: scale3d(0, 1, 1);
+                  transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1);
+                }
+                .double-underline:hover::before {
+                  transform-origin: 0% 50%;
+                  transform: scale3d(1, 1, 1);
+                  transition-timing-function: cubic-bezier(0.4, 1, 0.8, 1);
+                }
+                .double-underline::after {
+                  content: "";
+                  top: calc(100% + 4px);
+                  transform-origin: 0% 50%;
+                  transform: scale3d(0, 1, 1);
+                  transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1);
+                }
+                .double-underline:hover::after {
+                  transform-origin: 100% 50%;
+                  transform: scale3d(1, 1, 1);
+                  transition-timing-function: cubic-bezier(0.4, 1, 0.8, 1);
+                }
+              </style>
+            </div>
+          </a>
+        </div>
+        <div id="column-block" class="button-card-wrapper">
+          <div class="button-number">03</div>
+          <a href="#" class="link thick-double-underline column-inline-block">
+            <div class="text-block-2">racing lines</div>
+            <div class="custom-styles column-embed">
+              <style>
+                .thick-double-underline::before {
+                  transform-origin: 100% 50%;
+                  transform: scale3d(0, 1, 1);
+                  transition: transform 0.3s cubic-bezier(0.2, 1, 0.8, 1);
+                }
+                .thick-double-underline:hover::before {
+                  transform-origin: 0% 50%;
+                  transform: scale3d(1, 2, 1);
+                  transition-timing-function: cubic-bezier(0.7, 0, 0.2, 1);
+                }
+                .thick-double-underline::after {
+                  content: "";
+                  top: calc(100% + 4px);
+                  transform-origin: 100% 50%;
+                  transform: scale3d(0, 1, 1);
+                  transition: transform 0.4s 0.1s cubic-bezier(0.2, 1, 0.8, 1);
+                }
+                .thick-double-underline:hover::after {
+                  transform-origin: 0% 50%;
+                  transform: scale3d(1, 1, 1);
+                  transition-timing-function: cubic-bezier(0.7, 0, 0.2, 1);
+                }
+              </style>
+            </div>
+          </a>
+        </div>
+        <div id="column-block" class="button-card-wrapper">
+          <div class="button-number">04</div>
+          <a
+            data-text="Get Started"
+            href="#"
+            class="link rollover-underline column-inline-block"
+          >
+            <div class="text-block">Get Started</div>
+            <div class="custom-styles column-embed">
+              <style>
+                .rollover-underline {
+                  overflow: hidden;
+                  line-height: 2;
+                }
+                .rollover-underline::before {
+                  height: 2px;
+                  top: calc(100% - 5px);
+                  transform-origin: 100% 50%;
+                  transform: scale3d(0, 1, 1);
+                  transition: transform 0.3s cubic-bezier(0.5, 0.5, 0.3, 1);
+                }
+                .rollover-underline:hover::before {
+                  transform-origin: 0% 50%;
+                  transform: scale3d(1, 1, 1);
+                }
+                .rollover-underline::after {
+                  content: attr(data-text);
+                  height: 100%;
+                  top: 0;
+                  background: none;
+                  transform-origin: 100% 50%;
+                  transform: translate3d(150%, 0, 0);
+                  transition: transform 0.3s cubic-bezier(0.5, 0.5, 0.3, 1);
+                }
+                .rollover-underline:hover::after {
+                  transform: translate3d(0, 0, 0);
+                }
+                .rollover-underline div {
+                  display: inline-block;
+                  transition: transform 0.3s cubic-bezier(0.5, 0.5, 0.3, 1);
+                }
+                .rollover-underline:hover div {
+                  transform: translate3d(-150%, 0, 0);
+                }
+              </style>
+            </div>
+          </a>
+        </div>
+        <div id="column-block" class="button-card-wrapper">
+          <div class="button-number">05</div>
+          <a href="#" class="link strikethrough-grow column-inline-block">
+            <div>Shop the look</div>
+            <div class="custom-styles column-embed">
+              <style>
+                .strikethrough-grow::before {
+                  top: 50%;
+                  height: 2px;
+                  transform-origin: 100% 50%;
+                  transform: scale3d(0, 1, 1);
+                  transition: transform 0.3s cubic-bezier(0.4, 1, 0.8, 1);
+                }
+                .strikethrough-grow:hover::before {
+                  transform-origin: 0% 50%;
+                  transform: scale3d(1, 1, 1);
+                }
+                .strikethrough-grow div {
+                  display: inline-block;
+                  transition: transform 0.3s cubic-bezier(0.4, 1, 0.8, 1);
+                }
+                .strikethrough-grow:hover div {
+                  transform: scale3d(1.1, 1.1, 1.1);
+                }
+              </style>
+            </div>
+          </a>
+        </div>
+        <div id="column-block" class="button-card-wrapper">
+          <div class="button-number">06</div>
+          <a href="#" class="link split-underline column-inline-block">
+            <div>Studio</div>
+            <div class="custom-styles column-embed">
+              <style>
+                .split-underline::before {
+                  transform-origin: 50% 100%;
+                  transition: clip-path 0.3s,
+                    transform 0.3s cubic-bezier(0.2, 1, 0.8, 1);
+                  clip-path: polygon(
+                    0% 0%,
+                    0% 100%,
+                    0 100%,
+                    0 0,
+                    100% 0,
+                    100% 100%,
+                    0 100%,
+                    0 100%,
+                    100% 100%,
+                    100% 0%
+                  );
+                }
+                .split-underline:hover::before {
+                  transform: translate3d(0, 2px, 0) scale3d(1.08, 3, 1);
+                  clip-path: polygon(
+                    0% 0%,
+                    0% 100%,
+                    50% 100%,
+                    50% 0,
+                    50% 0,
+                    50% 100%,
+                    50% 100%,
+                    0 100%,
+                    100% 100%,
+                    100% 0%
+                  );
+                }
+                .split-underline div {
+                  display: inline-block;
+                  transition: transform 0.3s cubic-bezier(0.2, 1, 0.8, 1);
+                }
+                .split-underline:hover div {
+                  transform: translate3d(0, -2px, 0);
+                }
+              </style>
+            </div>
+          </a>
+        </div>
+        <div id="column-block" class="button-card-wrapper">
+          <div class="button-number">07</div>
+          <a href="#" class="link staggered-underline column-inline-block">
+            <div>Portfolio</div>
+            <div class="custom-styles column-embed">
+              <style>
+                .staggered-underline::before,
+                .staggered-underline::after {
+                  opacity: 0;
+                  transform-origin: 50% 0%;
+                  transform: translate3d(0, 3px, 0);
+                  transition-property: transform, opacity;
+                  transition-duration: 0.3s;
+                  transition-timing-function: cubic-bezier(0.2, 1, 0.8, 1);
+                }
+                .staggered-underline:hover::before,
+                .staggered-underline:hover::after {
+                  opacity: 1;
+                  transform: translate3d(0, 0, 0);
+                  transition-timing-function: cubic-bezier(0.2, 0, 0.3, 1);
+                }
+                .staggered-underline::after {
+                  content: "";
+                  top: calc(100% + 4px);
+                  width: 70%;
+                  left: 15%;
+                }
+                .staggered-underline::before,
+                .staggered-underline:hover::after {
+                  transition-delay: 0.1s;
+                }
+                .staggered-underline:hover::before {
+                  transition-delay: 0s;
+                }
+              </style>
+            </div>
+          </a>
+        </div>
+        <div id="column-block" class="button-card-wrapper">
+          <div class="button-number">08</div>
+          <a href="#" class="link underline-up column-inline-block">
+            <div>Learn more</div>
+            <div class="custom-styles column-embed">
+              <style>
+                .underline-up::before {
+                  height: 10px;
+                  top: 100%;
+                  opacity: 0;
+                }
+                .underline-up:hover::before {
+                  opacity: 1;
+                  animation: lineUp 0.3s ease forwards;
+                }
+                @keyframes lineUp {
+                  0% {
+                    transform-origin: 50% 100%;
+                    transform: scale3d(1, 0.045, 1);
+                  }
+                  50% {
+                    transform-origin: 50% 100%;
+                    transform: scale3d(1, 1, 1);
+                  }
+                  51% {
+                    transform-origin: 50% 0%;
+                    transform: scale3d(1, 1, 1);
+                  }
+                  100% {
+                    transform-origin: 50% 0%;
+                    transform: scale3d(1, 0.045, 1);
+                  }
+                }
+              </style>
+            </div>
+          </a>
+        </div>
+        <div id="column-block" class="button-card-wrapper">
+          <div class="button-number">09</div>
+          <a href="#" class="link underline-slide column-inline-block">
+            <div>Blog</div>
+            <div class="custom-styles column-embed">
+              <style>
+                .underline-slide::before {
+                  transform-origin: 0% 50%;
+                  transform: scale3d(0, 1, 1);
+                  transition: transform 0.3s;
+                }
+                .underline-slide:hover::before {
+                  transform: scale3d(1, 1, 1);
+                }
+                .underline-slide::after {
+                  content: "";
+                  top: calc(100% + 4px);
+                  transition: transform 0.3s;
+                  transform-origin: 100% 50%;
+                }
+                .underline-slide:hover::after {
+                  transform: scale3d(0, 1, 1);
+                }
+              </style>
+            </div>
+          </a>
+        </div>
+        <div id="column-block" class="button-card-wrapper">
+          <div class="button-number">10</div>
+          <a href="#" class="link glitch-lines column-inline-block">
+            <div>Discover more</div>
+            <div class="custom-styles column-embed">
+              <style>
+                .glitch-lines::before {
+                  height: 2px;
+                  opacity: 0;
+                }
+                .glitch-lines:hover::before {
+                  opacity: 1;
+                  animation: glitchLine 0.4s steps(2, start) forwards;
+                }
+                @keyframes glitchLine {
+                  0% {
+                    transform: scale3d(1, 1, 1);
+                  }
+                  10% {
+                    transform: translate3d(10px, 0, 0);
+                  }
+                  20% {
+                    transform: translate3d(0, 4px, 0);
+                  }
+                  30% {
+                    transform: scale3d(0.1, 1.4, 1) translate3d(0, -25px, 0);
+                    transform-origin: 100% 0%;
+                  }
+                  40% {
+                    transform: scale3d(1, 0.3, 1) translate3d(0, 25px, 0);
+                  }
+                  50% {
+                    transform: scale3d(0.5, 0.3, 1)
+                      translate3d(-100px, -80px, 0);
+                  }
+                  60% {
+                    transform: scale3d(1, 1.25, 1) translate3d(10px, -5px, 0);
+                  }
+                  70% {
+                    transform: scale3d(0.5, 0.5, 1) translate3d(0, 20px, 0);
+                  }
+                  80% {
+                    transform: translate3d(-30, 10px, 0) scale3d(1, 0.4, 1);
+                    transform-origin: 100% 0%;
+                  }
+                  90% {
+                    transform: scale3d(1, 0.5, 1) translate3d(0, -15px, 0);
+                    transform-origin: 0% 50%;
+                  }
+                  100% {
+                    opacity: 1;
+                  }
+                }
+              </style>
+            </div>
+          </a>
+        </div>
+        <div id="column-block" class="button-card-wrapper">
+          <div class="button-number">11</div>
+          <a href="#" class="link underline-fill column-inline-block">
+            <div>Projects</div>
+            <div class="custom-styles column-embed">
+              <style>
+                .underline-fill::before {
+                  height: 100%;
+                  top: 0;
+                  opacity: 0;
+                }
+                .underline-fill:hover::before {
+                  opacity: 1;
+                  animation: coverUp 0.3s ease forwards;
+                }
+                @keyframes coverUp {
+                  0% {
+                    transform-origin: 50% 100%;
+                    transform: scale3d(1, 0.045, 1);
+                  }
+                  50% {
+                    transform-origin: 50% 100%;
+                    transform: scale3d(1, 1, 1);
+                  }
+                  51% {
+                    transform-origin: 50% 0%;
+                    transform: scale3d(1, 1, 1);
+                  }
+                  100% {
+                    transform-origin: 50% 0%;
+                    transform: scale3d(1, 0.045, 1);
+                  }
+                }
+                .underline-fill::after {
+                  content: "";
+                  transition: opacity 0.3s;
+                }
+                .underline-fill:hover::after {
+                  opacity: 0;
+                }
+              </style>
+            </div>
+          </a>
+        </div>
+        <div id="column-block" class="button-card-wrapper">
+          <div class="button-number">12</div>
+          <a href="#" class="link wavy-link column-inline-block">
+            <div>Discover more</div>
+            <div class="line-graphic column-embed">
+              <svg
+                class="link__graphic link__graphic--slide"
+                width="300%"
+                height="100%"
+                viewbox="0 0 1200 60"
+                preserveaspectratio="none"
+              >
+                <path
+                  d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"
+                ></path>
+              </svg>
+            </div>
+            <div class="custom-styles column-embed">
+              <style>
+                .wavy-link {
+                  font-family: lust-fine, sans-serif;
+                  overflow: hidden;
+                  padding: 7px 0;
+                }
+                .link__graphic {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  pointer-events: none;
+                  fill: none;
+                  stroke: #000;
+                  stroke-width: 1px;
+                }
+                .link__graphic--slide {
+                  top: -3px;
+                  stroke-width: 2px;
+                  transition: transform 0.7s;
+                  transition-timing-function: cubic-bezier(0, 0.25, 0.5, 1);
+                }
+                .link:hover .link__graphic--slide {
+                  transform: translate3d(-66.6%, 0, 0);
+                }
+              </style>
+            </div>
+          </a>
+        </div>
+        <div id="column-block" class="button-card-wrapper">
+          <div class="button-number">13</div>
+          <a href="#" class="link curved-underline column-inline-block">
+            <div>Sign Up</div>
+            <div class="line-graphic column-embed">
+              <svg
+                class="link__graphic link__graphic--stroke link__graphic--arc"
+                width="100%"
+                height="18"
+                viewbox="0 0 59 18"
+              >
+                <path
+                  d="M.945.149C12.3 16.142 43.573 22.572 58.785 10.842"
+                  pathlength="1"
+                ></path>
+              </svg>
+            </div>
+            <div class="custom-styles column-embed">
+              <style>
+                .curved-underline::before {
+                  content: none;
+                }
+                .link__graphic--arc {
+                  top: 73%;
+                  left: -23%;
+                }
+                .link__graphic--arc path {
+                  transition: stroke-dashoffset 0.4s
+                    cubic-bezier(0.7, 0, 0.3, 1);
+                }
+                .link:hover .link__graphic--arc path {
+                  transition-timing-function: cubic-bezier(0.8, 1, 0.7, 1);
+                  transition-duration: 0.3s;
+                }
+                .link__graphic--stroke path {
+                  stroke-dasharray: 1;
+                  stroke-dashoffset: 1;
+                }
+                .link:hover .link__graphic--stroke path {
+                  stroke-dashoffset: 0;
+                }
+              </style>
+            </div>
+          </a>
+        </div>
+        <div id="column-block" class="button-card-wrapper">
+          <div class="button-number">14</div>
+          <a href="#" class="link curved-underline column-inline-block">
+            <div>Authors</div>
+            <div class="line-graphic column-embed">
+              <svg
+                class="link__graphic link__graphic--stroke link__graphic--scribble"
+                width="100%"
+                height="9"
+                viewbox="0 0 101 9"
+              >
+                <path
+                  d="M.426 1.973C4.144 1.567 17.77-.514 21.443 1.48 24.296 3.026 24.844 4.627 27.5 7c3.075 2.748 6.642-4.141 10.066-4.688 7.517-1.2 13.237 5.425 17.59 2.745C58.5 3 60.464-1.786 66 2c1.996 1.365 3.174 3.737 5.286 4.41 5.423 1.727 25.34-7.981 29.14-1.294"
+                  pathlength="1"
+                ></path>
+              </svg>
+            </div>
+            <div class="custom-styles column-embed">
+              <style>
+                .link--carme::before {
+                  display: none;
+                }
+                .link__graphic--scribble {
+                  top: 100%;
+                }
+                .link__graphic--scribble path {
+                  transition: stroke-dashoffset 0.6s
+                    cubic-bezier(0.7, 0, 0.3, 1);
+                }
+                .link:hover .link__graphic--scribble path {
+                  transition-timing-function: cubic-bezier(0.8, 1, 0.7, 1);
+                  transition-duration: 0.3s;
+                }
+              </style>
+            </div>
+          </a>
+        </div>
+        <div id="column-block" class="button-card-wrapper">
+          <div class="button-number">15</div>
+          <a href="#" class="link underline-expand column-inline-block">
+            <div>Contact us</div>
+            <div class="custom-styles column-embed">
+              <style>
+                .underline-expand::before {
+                  height: 7px;
+                  border-radius: 20px;
+                  transform: scale3d(1, 1, 1);
+                  transition: transform 0.2s, opacity 0.2s;
+                  transition-timing-function: cubic-bezier(
+                    0.2,
+                    0.57,
+                    0.67,
+                    1.53
+                  );
+                }
+                .underline-expand:hover::before {
+                  transition-timing-function: cubic-bezier(0.8, 0, 0.1, 1);
+                  transition-duration: 0.4s;
+                  opacity: 1;
+                  transform: scale3d(1.2, 0.1, 1);
+                }
+                .underline-expand div {
+                  transform: translate3d(0, -4px, 0);
+                  display: inline-block;
+                  transition: transform 0.2s 0.05s
+                    cubic-bezier(0.2, 0.57, 0.67, 1.53);
+                }
+                .underline-expand:hover div {
+                  transform: translate3d(0, 0, 0);
+                  transition-timing-function: cubic-bezier(0.8, 0, 0.1, 1);
+                  transition-duration: 0.4s;
+                  transition-delay: 0s;
+                }
+              </style>
+            </div>
+          </a>
+        </div>
+        <div id="column-block" class="button-card-wrapper">
+          <div class="button-number">16</div>
+          <a href="#" class="link slide-in-bottom column-inline-block">
+            <div data-hover="Let&#x27;s go">Let&#x27;s go</div>
+            <div class="custom-styles column-embed">
+              <style>
+                .slide-in-bottom {
+                  overflow: hidden;
+                  padding: 0 4px;
+                  height: 1.2em;
+                }
+                .slide-in-bottom div {
+                  position: relative;
+                  display: inline-block;
+                  -webkit-transition: -webkit-transform 0.3s;
+                  -moz-transition: -moz-transform 0.3s;
+                  transition: transform 0.3s;
+                }
+                .slide-in-bottom div::before {
+                  position: absolute;
+                  top: 100%;
+                  content: attr(data-hover);
+                  -webkit-transform: translate3d(0, 0, 0);
+                  -moz-transform: translate3d(0, 0, 0);
+                  transform: translate3d(0, 0, 0);
+                }
+                .slide-in-bottom:hover div,
+                .slide-in-bottom:focus div {
+                  -webkit-transform: translateY(-100%);
+                  -moz-transform: translateY(-100%);
+                  transform: translateY(-100%);
+                }
+              </style>
+            </div>
+          </a>
+        </div>
+        <div id="column-block" class="button-card-wrapper">
+          <div class="button-number">17</div>
+          <a href="#" class="link circle-link column-inline-block">
+            <div>Focus</div>
+            <div class="custom-styles column-embed">
+              <style>
+                .circle-link::before,
+                .circle-link::after {
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  width: 100px;
+                  height: 100px;
+                  border: 2px solid rgba(0, 0, 0, 0.1);
+                  border-radius: 50%;
+                  content: "";
+                  opacity: 0;
+                  -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+                  -moz-transition: -moz-transform 0.3s, opacity 0.3s;
+                  transition: transform 0.3s, opacity 0.3s;
+                  -webkit-transform: translateX(-50%) translateY(-50%)
+                    scale(0.2);
+                  -moz-transform: translateX(-50%) translateY(-50%) scale(0.2);
+                  transform: translateX(-50%) translateY(-50%) scale(0.2);
+                  z-index: -1;
+                }
+                .circle-link::after {
+                  width: 90px;
+                  height: 90px;
+                  border-width: 6px;
+                  -webkit-transform: translateX(-50%) translateY(-50%)
+                    scale(0.8);
+                  -moz-transform: translateX(-50%) translateY(-50%) scale(0.8);
+                  transform: translateX(-50%) translateY(-50%) scale(0.8);
+                }
+                .circle-link:hover::before,
+                .circle-link:hover::after,
+                .circle-link:focus::before,
+                .circle-link:focus::after {
+                  opacity: 0.1;
+                  -webkit-transform: translateX(-50%) translateY(-50%) scale(1);
+                  -moz-transform: translateX(-50%) translateY(-50%) scale(1);
+                  transform: translateX(-50%) translateY(-50%) scale(1);
+                }
+              </style>
+            </div>
+          </a>
+        </div>
+        <div id="column-block" class="button-card-wrapper">
+          <div class="button-number">18</div>
+          <a href="#" class="link text-decoration-none column-inline-block">
+            <div class="border-switch">flapped</div>
+            <div class="custom-styles column-embed">
+              <style>
+                .text-decoration-none::before,
+                .text-decoration-none::after {
+                  content: none !important;
+                }
+                .border-switch {
+                  padding: 0 20px;
+                  height: 45px;
+                  line-height: 45px;
+                }
+                .border-switch::before,
+                .border-switch::after {
+                  position: absolute;
+                  width: 45px;
+                  height: 2px;
+                  background: #000;
+                  content: "";
+                  opacity: 0.2;
+                  -webkit-transition: all 0.3s;
+                  -moz-transition: all 0.3s;
+                  transition: all 0.3s;
+                  pointer-events: none;
+                  text-decoration: none !important;
+                }
+                .border-switch::before {
+                  top: 0;
+                  left: 0;
+                  -webkit-transform: rotate(90deg);
+                  -moz-transform: rotate(90deg);
+                  transform: rotate(90deg);
+                  -webkit-transform-origin: 0 0;
+                  -moz-transform-origin: 0 0;
+                  transform-origin: 0 0;
+                }
+                .border-switch::after {
+                  right: 0;
+                  bottom: 0;
+                  -webkit-transform: rotate(90deg);
+                  -moz-transform: rotate(90deg);
+                  transform: rotate(90deg);
+                  -webkit-transform-origin: 100% 0;
+                  -moz-transform-origin: 100% 0;
+                  transform-origin: 100% 0;
+                }
+                .border-switch:hover::before,
+                .border-switch:hover::after,
+                .border-switch:focus::before,
+                .border-switch:-moz-focusring::after {
+                  opacity: 1;
+                }
+                .border-switch:hover::before,
+                .border-switch:focus::before {
+                  left: 50%;
+                  -webkit-transform: rotate(0deg) translateX(-50%);
+                  -moz-transform: rotate(0deg) translateX(-50%);
+                  transform: rotate(0deg) translateX(-50%);
+                }
+                .border-switch:hover::after,
+                .border-switch:focus::after {
+                  right: 50%;
+                  -webkit-transform: rotate(0deg) translateX(50%);
+                  -moz-transform: rotate(0deg) translateX(50%);
+                  transform: rotate(0deg) translateX(50%);
+                }
+              </style>
+            </div>
+          </a>
+        </div>
+        <div id="column-block" class="button-card-wrapper">
+          <div class="button-number">19</div>
+          <a href="#" class="link cross-link column-inline-block">
+            <div data-hover="Our Team">crossed</div>
+            <div class="custom-styles column-embed">
+              <style>
+                .cross-link {
+                  position: relative;
+                  z-index: 1;
+                }
+                .cross-link {
+                  padding: 0 5px;
+                  color: #000;
+                  -webkit-transition: color 0.3s;
+                  -moz-transition: color 0.3s;
+                  transition: color 0.3s;
+                }
+                .cross-link::before,
+                .cross-link::after {
+                  position: absolute;
+                  width: 100%;
+                  left: 0;
+                  top: 50%;
+                  height: 2px;
+                  margin-top: -1px;
+                  background: #000;
+                  content: "";
+                  z-index: -1;
+                  -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+                  -moz-transition: -moz-transform 0.3s, opacity 0.3s;
+                  transition: transform 0.3s, opacity 0.3s;
+                  pointer-events: none;
+                  opacity: 0.3;
+                }
+                .cross-link::before {
+                  -webkit-transform: translateY(-20px);
+                  -moz-transform: translateY(-20px);
+                  transform: translateY(-20px);
+                }
+                .cross-link::after {
+                  -webkit-transform: translateY(20px);
+                  -moz-transform: translateY(20px);
+                  transform: translateY(20px);
+                }
+                .cross-link:hover,
+                .cross-link:focus {
+                  color: #000;
+                }
+                .cross-link:hover::before,
+                .cross-link:hover::after,
+                .cross-link:focus::before,
+                .cross-link:focus::after {
+                  opacity: 0.7;
+                }
+                .cross-link:hover::before,
+                .cross-link:focus::before {
+                  -webkit-transform: rotate(45deg);
+                  -moz-transform: rotate(45deg);
+                  transform: rotate(45deg);
+                }
+                .cross-link:hover::after,
+                .cross-link:focus::after {
+                  -webkit-transform: rotate(-45deg);
+                  -moz-transform: rotate(-45deg);
+                  transform: rotate(-45deg);
+                }
+              </style>
+            </div>
+          </a>
+        </div>
+        <div id="column-block" class="button-card-wrapper">
+          <div class="button-number">20</div>
+          <a href="#" class="link text-decoration-none column-inline-block">
+            <div class="brackets">bracketed</div>
+            <div class="custom-styles column-embed">
+              <style>
+                .brackets::before,
+                .brackets::after {
+                  display: inline-block;
+                  opacity: 0;
+                  -webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+                  -moz-transition: -moz-transform 0.3s, opacity 0.2s;
+                  transition: transform 0.3s, opacity 0.2s;
+                }
+                .brackets::before {
+                  margin-right: 10px;
+                  content: "[";
+                  -webkit-transform: translateX(20px);
+                  -moz-transform: translateX(20px);
+                  transform: translateX(20px);
+                }
+                .brackets::after {
+                  margin-left: 10px;
+                  content: "]";
+                  -webkit-transform: translateX(-20px);
+                  -moz-transform: translateX(-20px);
+                  transform: translateX(-20px);
+                }
+                .brackets:hover::before,
+                .brackets:hover::after,
+                .brackets:focus::before,
+                .brackets:focus::after {
+                  opacity: 1;
+                  -webkit-transform: translateX(0px);
+                  -moz-transform: translateX(0px);
+                  transform: translateX(0px);
+                }
+              </style>
+            </div>
+          </a>
+        </div>
+        <div id="column-block" class="button-card-wrapper">
+          <div class="button-number">21</div>
+          <a href="#" class="link text-decoration-none column-inline-block">
+            <div class="three-dots">dotted</div>
+            <div class="custom-styles column-embed">
+              <style>
+                .three-dots {
+                  -webkit-transition: color 0.3s;
+                  -moz-transition: color 0.3s;
+                  transition: color 0.3s;
+                }
+                .three-dots::before {
+                  position: absolute;
+                  top: 100%;
+                  left: 50%;
+                  color: transparent;
+                  content: "•";
+                  text-shadow: 0 0 transparent;
+                  font-size: 1.2em;
+                  -webkit-transition: text-shadow 0.3s, color 0.3s;
+                  -moz-transition: text-shadow 0.3s, color 0.3s;
+                  transition: text-shadow 0.3s, color 0.3s;
+                  -webkit-transform: translateX(-50%);
+                  -moz-transform: translateX(-50%);
+                  transform: translateX(-50%);
+                  pointer-events: none;
+                }
+                .three-dots:hover::before,
+                .three-dots:focus::before {
+                  color: #000;
+                  text-shadow: 10px 0 #000, -10px 0 #000;
+                }
+                .three-dots:hover,
+                .three-dots:focus {
+                  color: #000;
+                }
+              </style>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
